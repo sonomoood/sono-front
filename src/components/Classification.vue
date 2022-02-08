@@ -37,7 +37,6 @@ export default({
                      lyrics: this.lyrics
                  })
                 });
-                console.log(res);
                 this.mood = await res.text();
             }
         }

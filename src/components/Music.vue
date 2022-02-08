@@ -5,6 +5,15 @@
 <input id="music" v-model="music" type="text" placeholder="Ecrivez ici"/></p>
 <p><input type="submit" value="Afficher"/></p>
 </form>
+<div v-if="musics != null">
+    <span> Mood : {{ musics.mood }}</span><br>
+    <hr>
+    <div v-for="music in musics" :key="music">
+        <span>Titre : {{ music.title }}</span><br>
+        <span>Paroles : {{ music.lyrics }} </span>
+        <hr>
+    </div>
+</div>
 </template>
 <script>
 
@@ -13,7 +22,8 @@ export default({
         return{
             form:{
                 title:''
-            }
+            },
+            musics: {}
         }
         
     },
@@ -21,6 +31,7 @@ export default({
         async getMusicByTile(){
             const res = await fetch('http://localhost:3000/music/get?title='+this.title, {
                  method: 'GET'});
+                 this.musics = await res.json();
         }
     }
 })

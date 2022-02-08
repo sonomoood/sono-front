@@ -31,11 +31,7 @@ export default({
             const res = await fetch('http://localhost:3000/recommendation/from-twitter?twitter_username='+this.username, {
                  method: 'GET'
             });
-            console.log(res);
             this.musics = await res.json();
-        },
-        convertToText(){
-            const show = JSON.parse(this.res);
         }
     }
 })
