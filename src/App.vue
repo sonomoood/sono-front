@@ -6,7 +6,7 @@ import { onMounted } from "@vue/runtime-core"
 <template>
 
   <div><router-link to="/">Home</router-link></div>
-  <div><router-link to="/classification/from-lyrics">Recommandation</router-link></div>
+  <div><router-link to="/classification/from-lyrics">Classification</router-link></div>
   <div><router-link to="/recommandation/from-twitter">Twitter</router-link></div>
   <div><router-link to="/music/get">Musique</router-link></div>
 
