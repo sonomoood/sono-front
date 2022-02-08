@@ -5,6 +5,15 @@
 <input id="username" v-model="username" type="text" placeholder="Ecrivez ici"/></p>
 <p><input type="submit" value="Afficher"/></p>
 </form>
+<div v-if="musics != null">
+    <span> Mood : {{ musics.mood }}</span><br>
+    <hr>
+    <div v-for="music in musics.musics" :key="music">
+        <span>Titre : {{ music.title }}</span><br>
+        <span>Paroles : {{ music.lyrics }} </span>
+        <hr>
+    </div>
+</div>
 </template>
 <script>
 
@@ -13,7 +22,8 @@ export default({
         return{
             form:{
                 username:''
-            }
+            },
+            musics:{}
         }
     },
     methods :{
@@ -21,6 +31,11 @@ export default({
             const res = await fetch('http://localhost:3000/recommendation/from-twitter?twitter_username='+this.username, {
                  method: 'GET'
             });
+            console.log(res);
+            this.musics = await res.json();
+        },
+        convertToText(){
+            const show = JSON.parse(this.res);
         }
     }
 })
