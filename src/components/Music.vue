@@ -1,9 +1,9 @@
 <template>
     <h1>Musique</h1>
 <form action="" method="get">
-<p>Saisissez un titre de musique : </p>
-<input type="text" placeholder="Ecrivez ici"/>
-<button >Afficher</button>
+<p><label for="music">Saisissez un titre de musique : </label>
+<input id="music" v-model="music" type="text" placeholder="Ecrivez ici"/></p>
+<p><input type="submit" value="Afficher"/></p>
 </form>
 </template>
 <script>
