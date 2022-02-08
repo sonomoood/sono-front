@@ -4,9 +4,9 @@
 <template>
 
   <div><router-link to="/">Home</router-link></div>
-  <div><router-link to="/classification">Classification</router-link></div>
-  <div><router-link to="/add">Ajout</router-link></div>
-  <div><router-link to="/twitter">Twitter</router-link></div>
+  <div><router-link to="/classification/from-lyrics">Classification</router-link></div>
+  <div><router-link to="/recommandation/from-twitter">Twitter</router-link></div>
+  <div><router-link to="/music/get">Musique</router-link></div>
 
 <router-view/>
 
